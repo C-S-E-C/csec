@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Browser</title>
+    <style>
+        #file-list {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="file-list"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('files.json')
+                .then(response => response.json())
+                .then(files => {
+                    const fileList = document.getElementById('file-list');
+                    files.forEach(file => {
+                        const div = document.createElement('div');
+                        div.textContent = file;
+                        fileList.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Oops:', error));
+        });
+    </script>
+</body>
+</html>
