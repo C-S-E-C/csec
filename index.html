@@ -128,7 +128,7 @@ a.avatar img {
 </head>
 <body>
 <h1>CSEC</h1>
-<div>
+<div id='show'>
 
 <span>─────────────────────────────────────────────────────────────</span>
 <p>─██████████████─██████████████─██████████████─██████████████─</p>
@@ -161,9 +161,9 @@ a.avatar img {
 
 
 <script>
-var str = document.getElementsByTagName('div')[0].innerHTML.toString();
+var str = document.getElementById("show").toString();
 var i = 0;
-document.getElementsByTagName('div')[0].innerHTML = "";
+document.getElementById("show").innerHTML = "";
 
 function show() {
     setTimeout(function() {
