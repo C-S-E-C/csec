@@ -169,10 +169,10 @@ function show() {
     setTimeout(function() {
     var se = setInterval(function() {
         i++;
-        document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
+        document.getElementById("show").innerHTML = str.slice(0, i) + "|";
         if (i == str.length) {
             clearInterval(se);
-            document.getElementsByTagName('div')[0].innerHTML = str;
+            document.getElementById("show").innerHTML = str;
         }
     }, 0);
 },0);
