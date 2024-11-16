@@ -167,25 +167,20 @@ a.avatar img {
 
 
 <script>
-/*
-var str = document.getElementById("show").toString();
+var str = document.getElementsByTagName('div')[0].innerHTML.toString();
 var i = 0;
-document.getElementById("show").innerHTML = "";
+document.getElementsByTagName('div')[0].innerHTML = "";
 
-function show() {
-    setTimeout(function() {
+setTimeout(function() {
     var se = setInterval(function() {
         i++;
-        document.getElementById("show").innerHTML = str.slice(0, i) + "|";
+        document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
         if (i == str.length) {
             clearInterval(se);
-            document.getElementById("show").innerHTML = str;
+            document.getElementsByTagName('div')[0].innerHTML = str;
         }
-    }, 0);
+    }, 10);
 },0);
-}
-show();
-*/
 </script>
 
 </body>
