@@ -60,6 +60,21 @@
             color: #00ff00;
         }
 
+        .donate-button {
+            background: #2F2;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .donate-button:hover {
+            background: #1D1;
+            transform: translateY(-2px);
+        }
+
         .hero {
             height: 100vh;
             display: flex;
@@ -176,6 +191,7 @@
                 <a href="https://csec.top/">Home</a>
                 <a href="https://blog.csec.top/2024/10/05/About-CSEC/">About</a>
                 <a href="mailto:admin@csec.top">Contact</a>
+                <a href="https://ifdian.net/a/__CSEC__">Donate</a>
             </div>
         </div>
     </nav>
@@ -183,27 +199,31 @@
     <section class="hero" id="home" onmousedown='window.open("joinus")'>
         <canvas class="matrix-bg" id="matrix"></canvas>
         <div class="hero-content">
-            <h1>Securing Your Digital Future</h1>
-            <p>CSEC provides world-class cybersecurity solutions to protect your organization against evolving digital threats. Our expert team ensures your data remains secure in an increasingly connected world.</p>
+            <h1>Learn & Grow with CSEC</h1>
+            <p>CSEC is a non-profit cybersecurity community dedicated to sharing knowledge and fostering learning in cybersecurity. Join our community of enthusiasts and professionals to explore, learn, and contribute to the world of digital security.</p>
             <a class="cta-button">Join Us</a>
         </div>
     </section>
 
     <section class="services" id="services">
-        <h2>Our Services</h2>
+        <h2>What We Offer</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Threat Detection</h3>
-                <p>Advanced monitoring and detection systems to identify potential security threats before they become problems.</p>
+                <h3>Learning Resources</h3>
+                <p>Access free educational materials, tutorials, and guides to enhance your cybersecurity knowledge.</p>
             </div>
             <div class="service-card">
-                <h3>Incident Response</h3>
-                <p>24/7 rapid response team ready to handle any security incidents and minimize potential damage.</p>
+                <h3>Community Projects</h3>
+                <p>Participate in collaborative security research and open-source projects with fellow community members.</p>
             </div>
             <div class="service-card">
-                <h3>Security Consulting</h3>
-
-                <p>Expert guidance on implementing robust security measures and best practices for your organization.</p>
+                <h3>Knowledge Sharing</h3>
+                <p>Share your expertise and learn from others through our community forums and educational events.</p>
+            </div>
+            <div class="service-card">
+                <h3>Support Our Mission</h3>
+                <p>Help us maintain and grow our educational resources and community initiatives. Your support makes a difference!</p>
+                <a href="https://ifdian.net/a/__CSEC__" class="donate-button" style="display: inline-block; margin-top: 15px;">Donate</a>
             </div>
         </div>
         <div id="matrix"></div>
@@ -217,8 +237,8 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ123456789@#$%^&*()*&^%';
-        const fontSize = 10;
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+        const fontSize = 25;
         const columns = canvas.width / fontSize;
         const drops = [];
 
@@ -227,10 +247,10 @@
         }
 
         function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillStyle = 'rgba(0,0,0,0.05)';  // Reduced opacity for longer trails
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = '#AFA';
+            ctx.fillStyle = '#2F2'; // Brighter cyan-green color
             ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
