@@ -1,188 +1,256 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>WELCOME TO CSEC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEC - Cybersecurity Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-<style>
-@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
-img{
-	height: 90px;
-}
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
-    color: inherit;
-}
-#paypal-container-6SBLVDD9P3U56{
-	margin:middle;
-	bottom:0px;
-	left:30%
-	right:30%
-}
-#amount {
-	color: black;
-}
-body {
-    background-image: linear-gradient(120deg, #000000 0%, #000000 100%);
-    height: 100vh;
-    color: white;
-}
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 15, 15, 0.95);
+            padding: 1rem 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-h1 {
-    font-size: 20vw;
-    text-align: center;
-    position: fixed;
-    width: 100vw;
-    z-index: 1;
-    color: #ffffff26;
-    bottom: -20px;
-    right: 0%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    font-family: "Montserrat", monospace;
-}
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-#show {
-    background: rgba(0, 0, 0, 0);
-    width: 70vw;
-    position: relative;
-    top: 0px;
-    margin: 0 auto;
-    padding: 30px 30px 10px;
-    box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
-    z-index: 3;
-}
+        .logo {
+            height: 50px;
+            width: auto;
+        }
 
-P {
-    font-family: "Share Tech Mono", monospace;
-    color: #f0c674;
-    margin: 0 0 20px;
-    font-size: 17px;
-    line-height: 1.2;
-    font-weight: bold;
-}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
 
-span {
-    color: #f;
-}
+        }
 
-i {
-    color: #8abeb7;
-}
+        .nav-links a {
 
-div a {
-    text-decoration: none;
-}
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
 
-b {
-    color: #81a2be;
-}
+        .nav-links a:hover {
+            color: #00ff00;
+        }
 
-a.avatar {
-    position: fixed;
-    bottom: 15px;
-    right: -100px;
-    -webkit-animation: slide 0.5s 4.5s forwards;
-            animation: slide 0.5s 4.5s forwards;
-    display: block;
-    z-index: 4
-}
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500"><rect fill="%23000" width="2000" height="1500"/><defs><radialGradient id="a" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="%23101010"/><stop offset="1" stop-color="%23000"/></radialGradient><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="0" y1="750" x2="1550" y2="750"><stop offset="0" stop-color="%23080808"/><stop offset="1" stop-color="%23000"/></linearGradient></defs><path fill="url(%23a)" d="M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z"/><g id="g"><use href="%23s" transform="scale(0.12) rotate(60)"/><use href="%23s" transform="scale(0.2) rotate(10)"/><use href="%23s" transform="scale(0.25) rotate(40)"/><use href="%23s" transform="scale(0.3) rotate(-20)"/><use href="%23s" transform="scale(0.4) rotate(-30)"/><use href="%23s" transform="scale(0.5) rotate(20)"/><use href="%23s" transform="scale(0.6) rotate(60)"/><use href="%23s" transform="scale(0.7) rotate(10)"/><use href="%23s" transform="scale(0.835) rotate(-40)"/><use href="%23s" transform="scale(0.9) rotate(40)"/><use href="%23s" transform="scale(1.05) rotate(25)"/><use href="%23s" transform="scale(1.2) rotate(8)"/><use href="%23s" transform="scale(1.333) rotate(-60)"/><use href="%23s" transform="scale(1.45) rotate(-30)"/><use href="%23s" transform="scale(1.6) rotate(10)"/></g></svg>');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
 
-a.avatar img {
-    border-radius: 100%;
-    width: 44px;
-    border: 2px solid white;
-}
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
 
-@-webkit-keyframes slide {
-    from {
-        right: -100px;
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-        opacity: 0;
-    }
-    to {
-        right: 15px;
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-        opacity: 1;
-    }
-}
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
 
-@keyframes slide {
-    from {
-        right: -100px;
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-        opacity: 0;
-    }
-    to {
-        right: 15px;
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-        opacity: 1;
-    }
-}
-</style>
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
 
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #008000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: #00ff00;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        #logocont {
+            display: flex;
+        }
+    </style>
 </head>
 <body>
-<h1>CSEC</h1>
-<div id='show'>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div id="logocont">
+            <img href="https://csec.top/" src="logo2.png" alt="CSEC Logo" class="logo">
+            <h1>CSEC</h1>
+            </div>
+            <div class="nav-links">
+                <a href="https://csec.top/">Home</a>
+                <a href="https://blog.csec.top/2024/10/05/About-CSEC/">About</a>
+                <a href="mailto:admin@csec.top">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-<span>─────────────────────────────────────────────────────────────</span>
-<p>─██████████████─██████████████─██████████████─██████████████─</p>
-<p>─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─</p>
-<p>─██░░██████████─██░░██████████─██░░██████████─██░░██████████─</p>
-<p>─██░░██─────────██░░██─────────██░░██─────────██░░██─────────</p>
-<p>─██░░██─────────██░░██████████─██░░██████████─██░░██─────────</p>
-<p>─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██─────────</p>
-<p>─██░░██─────────██████████░░██─██░░██████████─██░░██─────────</p>
-<p>─██░░██─────────────────██░░██─██░░██─────────██░░██─────────</p>
-<p>─██░░██████████─██████████░░██─██░░██████████─██░░██████████─</p>
-<p>─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─</p>
-<p>─██████████████─██████████████─██████████████─██████████████─</p>
-<span>─────────────────────────────────────────────────────────────</span>
-<br  />
-<span>> </span><br  />
-<span>> </span><br  />
-<span>> </span><br  />
-<b>>WELCOME TO CSEC</b><br  />
-<span>></span><a href='http://blob.csec.top/'>get news on<b>blob.csec.top</b></a>
-<a href='https://ifdian.net/a/__csec__'>say hi to ifdian</a>
-<br  /><span>>powered by:</span>
-<br  />
-<video muted autoplay="autoplay" loop="loop" muted="muted">
-	<source src="https://hacknet-os.com/Images/LinedTitle.webm" type="video/mp4"></source>
-</video>
-<img src='EntropyLogo.png'></img>
-</div>
-	
+    <section class="hero" id="home" onmousedown='window.open("joinus")'>
+        <canvas class="matrix-bg" id="matrix"></canvas>
+        <div class="hero-content">
+            <h1>Securing Your Digital Future</h1>
+            <p>CSEC provides world-class cybersecurity solutions to protect your organization against evolving digital threats. Our expert team ensures your data remains secure in an increasingly connected world.</p>
+            <a class="cta-button">Join Us</a>
+        </div>
+    </section>
 
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Threat Detection</h3>
+                <p>Advanced monitoring and detection systems to identify potential security threats before they become problems.</p>
+            </div>
+            <div class="service-card">
+                <h3>Incident Response</h3>
+                <p>24/7 rapid response team ready to handle any security incidents and minimize potential damage.</p>
+            </div>
+            <div class="service-card">
+                <h3>Security Consulting</h3>
 
-<script>
-var str = document.getElementsByTagName('div')[0].innerHTML.toString();
-var i = 0;
-document.getElementsByTagName('div')[0].innerHTML = "";
+                <p>Expert guidance on implementing robust security measures and best practices for your organization.</p>
+            </div>
+        </div>
+        <div id="matrix"></div>
+    </section>
 
-setTimeout(function() {
-    var se = setInterval(function() {
-        i++;
-        document.getElementsByTagName('div')[0].innerHTML = str.slice(0, i) + "|";
-        if (i == str.length) {
-            clearInterval(se);
-            document.getElementsByTagName('div')[0].innerHTML = str;
+    <script>
+        // Matrix rain effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZЙЦУКЕНГШЩЗФЫВАПРОЛДЯЧСМИТЬ123456789@#$%^&*()*&^%';
+        const fontSize = 10;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
         }
-    }, 1);
-},0);
-</script>
 
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#AFA';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
