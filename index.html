@@ -178,6 +178,30 @@
         #logocont {
             display: flex;
         }
+
+        .footer {
+            background-color: rgba(15, 15, 15, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #2F2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #1D1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -190,6 +214,7 @@
             <div class="nav-links">
                 <a href="https://csec.top/">Home</a>
                 <a href="https://blog.csec.top/2024/10/05/About-CSEC/">About</a>
+                <a href="https://blog.csec.top">News</a>
                 <a href="mailto:admin@csec.top">Contact</a>
                 <a href="https://ifdian.net/a/__CSEC__">Donate</a>
             </div>
@@ -228,6 +253,12 @@
         </div>
         <div id="matrix"></div>
     </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/CSEC-ADMINS" target="_blank">GitHub: @CSEC-ADMINS</a>
+        </div>
+    </footer>
 
     <script>
         // Matrix rain effect
