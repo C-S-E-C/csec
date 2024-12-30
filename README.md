@@ -12,7 +12,7 @@ A non-profit cybersecurity community website dedicated to sharing knowledge and 
 
 ## Setup
 
-Simply open `index.html` in a web browser to view the website.
+Simply open `csec.top` in a web browser to view the website.
 
 ## Contributing
 
