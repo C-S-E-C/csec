@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEC - Cybersecurity Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 15, 15, 0.95);
+            padding: 1rem 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+
+        }
+
+        .nav-links a {
+
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00ff00;
+        }
+
+        .donate-button {
+            background: #2F2;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .donate-button:hover {
+            background: #1D1;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500"><rect fill="%23000" width="2000" height="1500"/><defs><radialGradient id="a" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="%23101010"/><stop offset="1" stop-color="%23000"/></radialGradient><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="0" y1="750" x2="1550" y2="750"><stop offset="0" stop-color="%23080808"/><stop offset="1" stop-color="%23000"/></linearGradient></defs><path fill="url(%23a)" d="M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z"/><g id="g"><use href="%23s" transform="scale(0.12) rotate(60)"/><use href="%23s" transform="scale(0.2) rotate(10)"/><use href="%23s" transform="scale(0.25) rotate(40)"/><use href="%23s" transform="scale(0.3) rotate(-20)"/><use href="%23s" transform="scale(0.4) rotate(-30)"/><use href="%23s" transform="scale(0.5) rotate(20)"/><use href="%23s" transform="scale(0.6) rotate(60)"/><use href="%23s" transform="scale(0.7) rotate(10)"/><use href="%23s" transform="scale(0.835) rotate(-40)"/><use href="%23s" transform="scale(0.9) rotate(40)"/><use href="%23s" transform="scale(1.05) rotate(25)"/><use href="%23s" transform="scale(1.2) rotate(8)"/><use href="%23s" transform="scale(1.333) rotate(-60)"/><use href="%23s" transform="scale(1.45) rotate(-30)"/><use href="%23s" transform="scale(1.6) rotate(10)"/></g></svg>');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #008000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: #00ff00;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        #logocont {
+            display: flex;
+        }
+
+        .footer {
+            background-color: rgba(15, 15, 15, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #2F2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #1D1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div id="logocont">
+            <img href="https://csec.top/" src="logo2.png" alt="CSEC Logo" class="logo">
+            <h1>CSEC</h1>
+            </div>
+            <div class="nav-links">
+                <a href="https://csec.top/">Home</a>
+                <a href="https://blog.csec.top/2024/10/05/About-CSEC/">About</a>
+                <a href="https://blog.csec.top">News</a>
+                <a href="mailto:admin@csec.top">Contact</a>
+                <a href="https://ifdian.net/a/__CSEC__">Donate</a>
+                <a STYLE="color: #f00;font-weight:900;" href="hny.html">🎉New Year Countdown🎉</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home" onmousedown='window.open("joinus")'>
+        <canvas class="matrix-bg" id="matrix"></canvas>
+        <div class="hero-content">
+            <h1>Learn & Grow with CSEC</h1>
+            <p>CSEC is a non-profit cybersecurity community dedicated to sharing knowledge and fostering learning in cybersecurity. Join our community of enthusiasts and professionals to explore, learn, and contribute to the world of digital security.</p>
+            <a class="cta-button">Join Us</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>What We Offer</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Learning Resources</h3>
+                <p>Access free educational materials, tutorials, and guides to enhance your cybersecurity knowledge.</p>
+            </div>
+            <div class="service-card">
+                <h3>Community Projects</h3>
+                <p>Participate in collaborative security research and open-source projects with fellow community members.</p>
+            </div>
+            <div class="service-card">
+                <h3>Knowledge Sharing</h3>
+                <p>Share your expertise and learn from others through our community forums and educational events.</p>
+            </div>
+            <div class="service-card">
+                <h3>Support Our Mission</h3>
+                <p>Help us maintain and grow our educational resources and community initiatives. Your support makes a difference!</p>
+                <a href="https://ifdian.net/a/__CSEC__" class="donate-button" style="display: inline-block; margin-top: 15px;">Donate</a>
+            </div>
+        </div>
+        <div id="matrix"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/CSEC-ADMINS" target="_blank">GitHub: @CSEC-ADMINS</a>
+        </div>
+    </footer>
+
+    <script>
+        // Matrix rain effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+        const fontSize = 25;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0,0,0,0.05)';  // Reduced opacity for longer trails
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#2F2'; // Brighter cyan-green color
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
