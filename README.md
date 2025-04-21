@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # CSEC Website
 
 A non-profit cybersecurity community website dedicated to sharing knowledge and fostering learning in cybersecurity.
