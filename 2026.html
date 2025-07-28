@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Countdown</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #1a1a1a, #000000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .countdown {
+            font-size: 5em;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: 2em;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00; }
+            50% { text-shadow: 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown" id="countdown"></div>
+    <div class="message">Until 2026!</div>
+    <p style="bottom: 0px;">made by Ian. Definitly.Not kiding.</p>
+    <h5 onclick="swin()" style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to open small window</h6>
+    <a style="color: #fff;"href="https://ifdian.net/a/__CSEC__">Donate</a>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+     views：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> | viewers：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>
+
+
+    <script>
+        // Create background particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(particle);
+
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = 0.5 + Math.random();
+            let x = parseFloat(particle.style.left);
+            let y = parseFloat(particle.style.top);
+
+            function animate() {
+                x += Math.cos(angle) * velocity;
+                y += Math.sin(angle) * velocity;
+                
+                if (x < 0 || x > window.innerWidth || y < 0 || y > window.innerHeight) {
+                    particle.remove();
+                    createParticle();
+                    return;
+                }
+
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        // Create initial particles
+        for (let i = 0; i < 50; i++) {
+            createParticle();
+        }
+        // Countdown function
+        function setCountdown() {
+            fetch("https://worldtimeapi.org/api/timezone/Etc/UTC")
+            .then(response => response.json())
+            .then(data => {
+                // if(data["day_of_year"] < 365){
+                //     document.getElementById('countdown').innerHTML = 
+                // `${data["day_of_year"]} days till 2026`;
+                // setInterval(() => {
+                //     if (pip != undefined){
+                //         pip.document.getElementById('countdown').innerHTML = 
+                //         `${data["day_of_year"]} days till 2026`;
+                //     }
+                // }, 1000);
+                // }else{
+                    const newYear = new Date('2026-01-01T00:00:00+00:00');
+                    now = new Date(data["unixtime"]* 1000);
+                    setInterval(() => {
+                        now = new Date(Date.parse(now) + 1000);
+                        const distance = newYear - now;
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementById('countdown').innerHTML = 
+                        `${days}D ${hours}H ${minutes}M ${seconds}S`;
+                        if (pip != undefined){
+                            pip.document.getElementById('countdown').innerHTML = 
+                            `${days}D ${hours}H ${minutes}M ${seconds}S`;
+                        }
+                    }, 1000);
+                // }
+            })
+        }
+        async function swin(){
+            pip = await window.documentPictureInPicture.requestWindow({height:50, width:200, title: "New Year Countdown"});
+            style = document.createElement('style');
+            style.innerHTML = `
+                    body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #1a1a1a, #000000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .countdown {
+            font-size: 2em;
+            text-align: center;
+            /* animation: glow 2s ease-in-out infinite; */
+        }
+
+        .message {
+            font-size: 2em;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00; }
+            50% { text-shadow: 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+            `;
+        pip.document.body.appendChild(style);
+        cd = document.createElement('div');
+        cd.className = 'countdown';
+        cd.id = 'countdown';
+        pip.document.body.appendChild(cd);
+        t = document.createElement('title');
+        t.innerText = "New Year Countdown";
+        pip.document.body.appendChild(t);
+        // pip.document.body.appendChild(document.createElement('title').innerText = "New Year Countdown");
+        }
+        var now;
+        var pip;
+        setCountdown();
+    </script>
+</body>
+</html>
