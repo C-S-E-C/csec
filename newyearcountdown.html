@@ -50,6 +50,7 @@
     <div class="countdown" id="countdown"></div>
     <div class="message">Until 2026!</div>
     <p style="bottom: 0px;">made by Ian. Definitly.Not kiding.</p>
+    <h5 onclick="offset = 8" style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to set to GMT+8</h6>
     <h5 onclick="swin()" style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to open small window</h6>
     <a style="color: #fff;"href="https://ifdian.net/a/__CSEC__">Donate</a>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -57,6 +58,7 @@
 
 
     <script>
+        var offset
         // Create background particles
         function createParticle() {
             const particle = document.createElement('div');
@@ -112,7 +114,7 @@
                     now = new Date(data["unixtime"]* 1000);
                     setInterval(() => {
                         now = new Date(Date.parse(now) + 1000);
-                        const distance = newYear - now;
+                        const distance = newYear - now - offset;
                         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
