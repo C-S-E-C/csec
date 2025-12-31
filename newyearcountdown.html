@@ -94,7 +94,8 @@
         }
         // Countdown function
         function setCountdown() {
-            fetch("https://worldtimeapi.org/api/timezone/Etc/UTC")
+            // fetch("https://worldtimeapi.org/api/timezone/Etc/UTC")
+            fetch("https://1.s.csec.top:10097/api/utc")
             .then(response => response.json())
             .then(data => {
                 // if(data["day_of_year"] < 365){
