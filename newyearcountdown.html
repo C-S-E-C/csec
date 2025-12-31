@@ -51,7 +51,7 @@
     <div class="message">Until 2026!</div>
     <p style="bottom: 0px;">made by Ian. Definitly.Not kiding.</p>
     <input type="text" id="offset-input"  />
-    <h5 onclick='set_offset(Number(document.getElementById("offset-input").value)*60*60*1000)' style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to set to GMT above</h6>
+    <h5 onclick='refreshoffset()' style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to set to GMT above</h6>
     <h5 onclick="swin()" style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to open small window</h6>
     <a style="color: #fff;"href="https://ifdian.net/a/__CSEC__">Donate</a>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -63,6 +63,9 @@
         var offset = 0;
         function set_offset(value) {
             offset = value;
+        }
+        function refreshoffset() {
+            set_offset(Number(document.getElementById('offset-input').value)*60*60*1000);
         }
         // Create background particles
         function createParticle() {
