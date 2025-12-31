@@ -120,7 +120,7 @@
                 // }else{
                     now = new Date(data["unixtime"]* 1000);
                     
-                    const newYear = new Date(String(now.getFullYear()+1) + '-01-01T00:00:00+00:00');
+                    const newYear = new Date(String(now.getFullYear()) + '-01-01T00:00:00+00:00');
                     setInterval(() => {
                         now = new Date(Date.parse(now) + 1000);
                         const distance = newYear - now - offset;
