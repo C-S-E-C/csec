@@ -48,7 +48,7 @@
 </head>
 <body>
     <div class="countdown" id="countdown"></div>
-    <div class="message">Until 2026!</div>
+    <div class="message">Until 2027!</div>
     <p style="bottom: 0px;">made by Ian. Definitly.Not kiding.</p>
     <input type="text" id="offset-input"  />
     <h5 onclick='refreshoffset()' style="border: 5px solid #fff;border-radius: 5px;padding: 5px;">click to set to GMT above</h6>
@@ -120,7 +120,8 @@
                 // }else{
                     now = new Date(data["unixtime"]* 1000);
                     
-                    const newYear = new Date(String(now.getFullYear()) + '-01-01T00:00:00+00:00');
+                    // const newYear = new Date(String(now.getFullYear()) + '-01-01T00:00:00+00:00');
+                    const newYear = new Date('2027-01-01T00:00:00+00:00');
                     setInterval(() => {
                         now = new Date(Date.parse(now) + 1000);
                         const distance = newYear - now - offset;
